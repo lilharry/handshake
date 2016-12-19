@@ -1,0 +1,5 @@
+compile: pipe_networking.c client.c server.c
+	gcc pipe_networking.c -o network
+	gcc client.c server.c -o server
+	gcc *.o -o main
+

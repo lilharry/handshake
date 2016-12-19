@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
+#include <fcntl.h>
 #include "pipe_networking.h"
 
 int main() {
@@ -11,7 +11,7 @@ int main() {
 
   from_server = client_handshake( &to_server );
   
-  char buffer[MESSAGE_BUFFER_SIZE];
+  char buffer[1000];
   printf("enter message: ");
   fgets( buffer, sizeof(buffer), stdin );
   char *p = strchr(buffer, '\n');
